@@ -1,23 +1,25 @@
 <script>
 	import { fade } from 'svelte/transition';
-	import data from './data.json';
-	import { scaleLinear, extent, max } from 'd3';
+	import { scaleLinear, max } from 'd3';
 
+	// Import data
+	import data from './data.json';
+
+	// To store chart dimensions
 	let width;
 	let height;
 
+	let hoveredData;
+
 	const variables = ['carbs(g)', 'cholesterol(mg)', 'fat(g)', 'kcal', 'protein(g)', 'sodium(mg)'];
 
+	let selectedType;
 	const types = ['All', 'Chinese', 'Indian', 'Malay'];
 	const typeColors = {
 		Chinese: '#eab308',
 		Malay: '#22c55e',
 		Indian: '#f43f5e'
 	};
-
-	let selectedType;
-
-	let hoveredData;
 
 	const radius = 6;
 
@@ -128,13 +130,17 @@
 
 <style>
 	.chart-container {
-		height: 600px;
+		height: 450px;
 		max-width: 800px;
 		margin: 0 auto;
 	}
 
 	svg {
 		overflow: visible;
+	}
+
+	text {
+		font-size: 20px;
 	}
 
 	.inputs-container {
@@ -144,10 +150,13 @@
 		padding: 24px;
 		margin-bottom: 48px;
 		font-size: 20px;
+		font-weight: 600;
 	}
 
 	.inputs-container select {
 		font-size: 20px;
+		font-family: 'Montserrat Variable', sans-serif;
+		font-weight: 600;
 	}
 
 	circle {
@@ -161,5 +170,6 @@
 		background: white;
 		box-shadow: rgba(0, 0, 0, 0.15) 2px 3px 8px;
 		border-radius: 5px;
+		font-size: 16px;
 	}
 </style>
