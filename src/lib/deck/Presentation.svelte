@@ -2,4 +2,6 @@
   import Slide from "./Slide.svelte";
 </script>
 
-<Slide></Slide>
+<Slide>{"Test"}</Slide>
+<Slide>{"Test"}</Slide>
+<Slide>{"Test"}</Slide>
