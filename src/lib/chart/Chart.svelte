@@ -47,6 +47,10 @@
 	}
 </script>
 
+<div class="title-container">
+	<h1>Nutritional Content of Hawker Food</h1>
+</div>
+
 <!-- Inputs -->
 <div class="inputs-container">
 	<!-- Filter for type -->
@@ -129,6 +133,11 @@
 </div>
 
 <style>
+  .title-container {
+    display: grid;
+    place-content: center;
+  }
+
 	.chart-container {
 		height: 450px;
 		max-width: 800px;
@@ -155,7 +164,6 @@
 
 	.inputs-container select {
 		font-size: 20px;
-		font-family: 'Montserrat Variable', sans-serif;
 		font-weight: 600;
 	}
 
